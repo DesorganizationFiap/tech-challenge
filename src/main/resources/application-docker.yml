@@ -3,3 +3,16 @@ spring:
     url: jdbc:postgresql://postgres-service.default.svc.cluster.local:5432/postgres
   jpa:
     show-sql: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    endpoint:
+      health:
+        show-details: always
+      metrics:
+        enabled: true
+      prometheus:
+        enabled: true

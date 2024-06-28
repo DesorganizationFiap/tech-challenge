@@ -28,6 +28,14 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    deploy:
+        resources:
+            limits:
+              cpus: '1.0'
+              memory: 2Gi
+            reservations:
+              cpus: '1.0'
+              memory: 2Gi
 
 networks:
   fiaptechchallengenetwork:

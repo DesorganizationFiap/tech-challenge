@@ -17,3 +17,8 @@ spec:
         image: gah963/fiap-fast-food
         ports:
         - containerPort: 8080
+        resources:
+          limits:
+            cpu: 3000m  # Increase this value as needed
+          requests:
+            cpu: 100m
