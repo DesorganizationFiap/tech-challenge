@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "fiap-fast-food.fullname" . }}-test-connection"
+  labels:
+    {{- include "fiap-fast-food.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "fiap-fast-food.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

@@ -1,0 +1,25 @@
+replicaCount: 1
+
+image:
+  repository: gah963/fiap-fast-food
+  pullPolicy: IfNotPresent
+  tag: ""
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: false
+
+resources:
+  limits:
+    cpu: 3000m
+  requests:
+    cpu: 100m
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
